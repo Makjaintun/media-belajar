@@ -3,31 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Media Pembelajaran</title>
+
   <style>
     body {
       background-color: #FFE2AF;
       font-family: Arial;
       text-align: center;
-      padding-top: 100px;
+      padding-top: 80px;
     }
 
-    button {padding: 12px 30px;
-      font-size: 16px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;}
-      button:hover{background-color: #2980b9;
-    }
-
-    #materi {
-      background: white;
-      width: 60%;
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 12px;
-    }
     h1 {
       color: #79C9C5;
     }
@@ -35,23 +19,80 @@
     p {
       color: #3F9AAE;
     }
+
+    button {
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #F96E5B;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 8px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .menu {
+      margin-top: 20px;
+    }
+
+    .section {
+      display: none;
+      background: #F96E5B;
+      padding: 20px;
+      margin: 20px auto;
+      width: 70%;
+      border-radius: 12px;
+    }
   </style>
 </head>
+
 <body>
 
-<h1>Media Pembelajaran</h1>
+  <h1>Media Pembelajaran</h1>
+
+  <!-- Tombol Start -->
   <button id="startBtn">Start</button>
 
-  <div id="materi" style="display:none;">
-    <h2>Materi Pembelajaran</h2>
-    <p>Ini adalah materi yang muncul setelah tombol Start ditekan.</p>
+  <!-- Menu -->
+  <div class="menu" id="menu" style="display:none;">
+    <button onclick="showSection('materi')">Materi</button>
+    <button onclick="showSection('contoh')">Contoh</button>
+    <button onclick="showSection('refleksi')">Refleksi</button>
+  </div>
+
+  <!-- Bagian Materi -->
+  <div id="materi" class="section">
+    <h2>Materi</h2>
+    <p>Ini isi materi utama pembelajaran.</p>
+  </div>
+
+  <div id="contoh" class="section">
+    <h2>Contoh</h2>
+    <p>Ini contoh soal atau ilustrasi.</p>
+  </div>
+
+  <div id="refleksi" class="section">
+    <h2>Refleksi</h2>
+    <p>Apa yang kamu pahami dari pelajaran ini?</p>
   </div>
 
   <script>
+    // Tombol Start
     document.getElementById("startBtn").onclick = function () {
-      document.getElementById("materi").style.display = "block";
+      document.getElementById("menu").style.display = "block";
       this.style.display = "none";
     };
+
+    // Fungsi menu
+    function showSection(id) {
+      const sections = document.querySelectorAll(".section");
+      sections.forEach(sec => sec.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
   </script>
 
 </body>
