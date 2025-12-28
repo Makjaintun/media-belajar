@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Pembelajaran</title>
+  <style>
+    body {
+      background-color: #FFE2AF;
+      font-family: Arial;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    button {padding: 12px 30px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;}
+      button:hover{background-color: #2980b9;
+    }
+
+    #materi {
+      background: white;
+      width: 60%;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    h1 {
+      color: #79C9C5;
+    }
+
+    p {
+      color: #3F9AAE;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Media Pembelajaran</h1>
+  <button id="startBtn">Start</button>
+
+  <div id="materi" style="display:none;">
+    <h2>Materi Pembelajaran</h2>
+    <p>Ini adalah materi yang muncul setelah tombol Start ditekan.</p>
+  </div>
+
+  <script>
+    document.getElementById("startBtn").onclick = function () {
+      document.getElementById("materi").style.display = "block";
+      this.style.display = "none";
+    };
+  </script>
+
+</body>
+</html>
